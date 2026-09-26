@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <meta name="theme-color" content="#0b0b0f" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SpaceRec" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <title>X Space Recorder</title>
+    <script>
+      document.documentElement.classList.add('dark');
+      // Register the service worker so the app is installable / standalone on mobile.
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('./sw.js').catch(function () {});
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"><!--ssr-outlet--></div>
+    <script type="module" src="./src/entry-client.tsx"></script>
+    <script>
+      // Fallback: if React fails to render (e.g. Vite dep stubs during cold
+      // start), auto-reload until deps are ready.  This fires OUTSIDE React
+      // so it works even when React itself is null/undefined.
+      (function(){
+        var K='__boot_reload', W=30000, M=8;
+        function st(){try{return JSON.parse(sessionStorage.getItem(K))||{c:0,t:0}}catch(e){return{c:0,t:0}}}
+        setTimeout(function(){
+          if(window.__reactOk)return;
+          var s=st(),c=(Date.now()-s.t>W)?0:s.c;
+          if(c<M){sessionStorage.setItem(K,JSON.stringify({c:c+1,t:Date.now()}));location.reload()}
+        },3000);
+      })();
+    </script>
+  </body>
+</html>

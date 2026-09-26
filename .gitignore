@@ -1,6 +1,7 @@
 node_modules/
-recordings/
+frontend/dist/
+backend/data/
+*.db
+*.db-wal
+*.db-shm
 .env
-*.session
-*.cookie
-cookies.txt
