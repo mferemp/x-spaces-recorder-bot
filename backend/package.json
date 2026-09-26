@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/check-env.js node --watch server.js",
+    "start": "node server.js",
+    "test": "node --test test/db.test.js test/telegram-bot.test.js",
+    "bot": "node telegram-bot.js"
+  },
+  "dependencies": {
+    "express": "4.22.1",
+    "ffmpeg-static": "^5.3.0",
+    "node-telegram-bot-api": "^2.1.0"
+  }
+}

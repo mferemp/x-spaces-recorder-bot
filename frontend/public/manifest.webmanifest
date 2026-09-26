@@ -1,0 +1,30 @@
+{
+  "id": "/",
+  "name": "X Space Recorder",
+  "short_name": "SpaceRec",
+  "description": "Record X Spaces in full — even if you join late. Live capture, auto-arm, and audio clarity enhancement.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "display_override": ["standalone", "fullscreen", "minimal-ui"],
+  "orientation": "portrait",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["utilities", "music", "productivity"],
+  "background_color": "#0b0b0f",
+  "theme_color": "#0b0b0f",
+  "icons": [
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Record a Space",
+      "short_name": "Record",
+      "description": "Paste a Space link and start recording",
+      "url": "."
+    }
+  ]
+}
